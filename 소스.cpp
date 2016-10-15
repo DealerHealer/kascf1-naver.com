@@ -1,20 +1,47 @@
-#include <iostream>
-using namespace std;
+
+/*
+//118 : 디버깅 - 형성평가3 ★ (무슨말인지 모르겠다.)
+#include <stdio.h>
 
 int main()
 {
-	for (int i = 0; i < 10; i++)
-	{
-		cout << "★";
-		if (i / 5 == 1)
-		{
-			cout << endl;
-		}
-	
-	}
+	int a = 5;
+	a += 10;
+	a = a - 1;
+	printf("%d\n", 1);
+	return 0;
 }
+*/
 
+/*
+//116 : 디버깅 - 형성평가1 ☆
+#include <iostream>
+#include <math.h> 
+using namespace std;
+//c,c++에서는 반올림을 지원하지않는다 올림ceil , 내림floor 은 지원해준다
 
+double Round(double n,int pos) //반올림
+{
+	double temp;
+	temp = n * pow(10, pos);
+	temp = floor(temp + 0.5);
+	temp *= pow(10, -pos);
+	return temp;
+}
+int main()
+{
+	int num[3] = { 0, };
+	double avg = 0.0;
+
+	cin >> num[0] >> num[1] >> num[2];
+	avg = (double)(num[0] + num[1] + num[2])/3;
+
+	cout << fixed;         //소수점 고정
+	cout.precision(1);     //1자리
+	cout << Round(avg,1)<< "점";
+	return 0;
+}
+*/
 /*
 //526 : 디버깅 - 자가진단1
 #include <iostream>
