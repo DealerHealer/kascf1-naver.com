@@ -242,3 +242,86 @@ using namespace std;
 //}
 
 //--------------------------------------------------- 2016/10/17
+
+//116 : 디버깅 - 형성평가1
+//int main(void)
+//{
+//	int n_1 = 0;
+//	int n_2 = 0;
+//	int n_3 = 0;
+//
+//	double a_result = 0;
+//
+//	cin >> n_1 >> n_2 >> n_3;
+//
+//	a_result = (double)(n_1 + n_2 + n_3) / 3;
+//
+//	cout << fixed << setprecision(1);
+//	cout << a_result << "점" << endl;
+//}
+
+//117 : 디버깅 - 형성평가2
+//int main(void)
+//{
+//	float n1 = 0;
+//	float n2 = 0;
+//	float n3 = 0;
+//	int p_result = 0;
+//	int a_result = 0;
+//
+//	cin >> n1 >> n2 >> n3;
+//	p_result = (int)n1 + (int)n2 + (int)n3;
+//	a_result = (int)(n1 + n2 + n3) / 3;
+//
+//	cout << "총점 " << p_result << "점" << endl;
+//	cout << "평균 " << a_result << "점" << endl;
+//}
+
+//★118 : 디버깅 - 형성평가3
+//int main(void)
+//{
+//	int a = 5;
+//	a += 10;
+//	a = a - 1;
+//	cout << 15 << endl;
+//	return 0;
+//	//답 14 아닌가? 왜 15지...
+//}
+
+//#include <time.h>
+//119 : 디버깅 - 형성평가4
+//int main(void)
+//{
+//	int a = 0;
+//	time_t now;
+//	struct tm tt;
+//	time(&now);
+//	tt = *localtime(&now);
+//	a = tt.tm_year;
+//	a += tt.tm_mon;
+//	a += tt.tm_mday;
+//
+//	cout << "0 " << "116 " << "143" << endl;
+//
+//	return 0;
+//}
+
+//528 : 선택제어문 - 자가진단1
+//int main(void)
+//{
+//	int n1;
+//
+//	cin >> n1;
+//
+//	if (n1 < 0)
+//	{
+//		cout << n1 << endl;
+//		cout << "음수입니다." << endl;
+//	}
+//
+//	else
+//	{
+//		cout << n1 << endl;
+//	}
+//}
+//------------------------------------------2016/10/18
