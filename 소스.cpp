@@ -1,3 +1,225 @@
+//563 : 배열1 - 자가진단9 
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int num[10] = { 0, };
+	int temp = 0;
+	for (int i = 0; i < 10; i++)
+	{
+		cin >> num[i];
+	}
+
+	for (int i = 0; i < 10; i++)
+	{
+		for (int j = 0; j < 10; j++)
+		{
+			if (num[j] < num[j + 1])
+			{
+				temp = num[j];
+				num[j] = num[j + 1];
+				num[j + 1] = temp;
+			}
+		}
+	}
+	for (int i = 0; i < 10; i++)
+		cout << num[i] << " ";
+	return 0;
+}
+
+/*
+//560 : 배열1 - 자가진단6 
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int num[10] = { 0, };
+	int min = 1000;
+
+	for (int i = 0; i < 10; i++)
+	{
+		cin >> num[i];
+		if (num[i] < min)
+		{
+			min = num[i];
+		}
+	}
+	cout << min;
+
+	return 0;
+}
+*/
+/*
+//555 : 배열1 - 자가진단1
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	char inputchar[10] = { 0, };
+
+	for (int i = 0; i < 10; i++)
+	{
+		cin >> inputchar[i];
+	}
+	for (int i = 0; i < 10; i++)
+	{
+		cout << inputchar[i];
+	}
+
+	return 0;
+}
+*/
+/*
+//149 : 반복제어문3 - 형성평가A 
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int inputnum = 0;
+	int num = 1;
+	cin >> inputnum;
+
+	for (int i = 0; i < inputnum; i++)
+	{
+		for (int j = 0; j < inputnum; j++)
+		{
+			cout << num << " ";
+			num += 2;
+			if (num == 11)
+			{
+				num = 1;
+			}
+			
+		 //   if (inputnum*inputnum % 2 == 1)
+			//{
+			//	if (num == (inputnum*inputnum) + 2)
+			//	{
+			//		num = 1;
+			//	}
+			//}
+			//else
+			//{
+			//	if (num == (inputnum*inputnum) + 1)
+			//	{
+			//		num = 1;
+			//	}
+			//}
+		}
+		cout << endl;
+	}
+	return 0;
+}
+*/
+
+/*
+//143 : 반복제어문3 - 형성평가4
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int inputnum = 0;
+	cin >> inputnum;
+
+	for (int i = 0; i < inputnum + inputnum - 1; i++)
+	{
+		if (i < inputnum)
+		{
+			for (int j = 0; j < i; j++)
+			{
+				cout << " ";
+			}
+			for (int j = 0; j < (inputnum * 2 - 1) - (i * 2); j++)
+			{
+				cout << "*";
+			}
+		}
+		else
+		{
+			for (int j = inputnum + inputnum -2; j > i; j--)
+			{
+				cout << " ";
+			}
+			for (int j = 0; j < (i * 2) - (inputnum * 2 - 3); j++)
+			{
+				cout << "*";
+			}
+		}
+		cout << endl;
+	}
+	return 0;
+}
+*/
+
+/*
+//142 : 반복제어문3 - 형성평가3 
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int inputnum = 0;
+	cin >> inputnum;
+
+	for (int i = 0; i < inputnum + inputnum - 1; i++)
+	{
+		if (i < inputnum)
+		{
+			for (int j = 0; j <= i; j++)
+			{
+				cout << "*";
+			}
+		}
+		else
+		{
+			for (int j = 0; j <inputnum + inputnum - 1 - i ; j++)
+			{
+				cout << "*";
+			}
+		}
+		cout << endl;
+	}
+	return 0;
+}
+*/
+/*
+//141 : 반복제어문3 - 형성평가2 
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int inputnum = 0;
+	int sum = 0;
+	int i = 0;
+
+	cin >> inputnum;
+
+	if (inputnum <= 100 && inputnum > 0)
+	{
+		while (1)
+		{
+			++i;
+			sum = inputnum * i;
+			if (sum >= 100)
+			{
+				break;
+			}
+			cout << sum << " ";
+			if (inputnum*i % 10 == 0)
+			{
+				break;
+			}
+		}
+	}
+	return 0;
+}
+*/
+/*
 //554 : 반복제어문3 - 자가진단7 
 #include <iostream>
 using namespace std;
@@ -23,7 +245,7 @@ int main()
 	}
 	return 0;
 }
-
+*/
 /*
 //553 : 반복제어문3 - 자가진단6 
 #include <iostream>
