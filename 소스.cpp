@@ -1,3 +1,388 @@
+/*
+//570 : 배열2 - 자가진단7 
+#include <iostream>
+using namespace std;
+
+//1 1 1 1 1
+//1 2 3 4 5
+//1 3 6 10 15
+//1 4 10 20 35
+//1 5 15 35 70
+
+int main()
+{
+	int num[5][5];
+
+	for (int y = 0; y < 5; y++)
+	{
+		for (int x = 0; x < 5; x++)
+		{
+			if (y == 0)
+			{
+				num[y][x] = 1;
+			}
+			else if (x == 0)
+			{
+				num[y][x] = 1;
+			}
+			else
+			{
+				num[y][x] = num[y - 1][x] + num[y][x-1];
+			}
+		}
+	}
+
+	for (int y = 0; y < 5; y++)
+	{
+		for (int x = 0; x < 5; x++)
+		{
+			cout << num[y][x] << " ";
+		}
+		cout << endl;
+	}
+
+
+	return 0;
+}
+*/
+
+/*
+//566 : 배열2 - 자가진단3 
+//100 이하의 자연수를 입력받아 첫 번째 항은 100으로 두 번째 항은 입력받은 수로 초기화하고 다음 항부터는 전전항에서 전항을 뺀 수로 채워나가는 수열을 작성하여 그 수가 음수가 나올 때까지 출력하는 프로그램을 작성하시오.
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int num[100] = { 100, };
+	int i = 0;
+	cin >> num[1];
+
+	while(1)
+	{
+		if (i >= 2)
+		{
+			num[i] = num[i - 2] - num[i - 1];
+		}
+		cout << num[i]<<" ";
+		if (num[i] < 0)
+		{
+			break;
+		}
+		i++;
+
+	}
+	return 0;
+}
+*/
+
+//#include <stdio.h>
+////양의 정수 a와 b를 입력받은 수 , 1이상 100이하의 정수중 a의 배수지만 b의 배수가 아닌 수를
+////모두 출력하는 프로그램을 작성하시오.
+//
+//int main()
+//{
+//	int num1 = 0, num2 = 0;
+//	int sum1 = 0, sum2 = 0;
+//	int i = 0;
+//	int j = 0;
+//	
+//	scanf("%d %d", &num1, &num2);
+//
+//	for (int i = 1; i < 100; i++)
+//	{
+//		if (num1%(num2*i) != 0)
+//		{
+//			printf("%d ", num1*i);
+//		}
+//	}
+//	return 0;
+//}
+
+
+/*
+#include <stdio.h>
+
+int main()
+{
+
+	//int num = 0;
+	//double sum = 0;
+	//scanf("%d", &num);
+
+	//for (int i = 2; i <= num; i++)
+	//{
+	//	sum += ((double)(i - 1) /(double) i);
+	//	printf(" %d/%d ", (i - 1), i);
+	//	if (sum >= 20)
+	//	{
+	//		break;
+	//	}
+	//	if (i != num)
+	//	{
+	//		printf("+");
+	//	}
+	//}
+	//printf("결과 : %.2f", sum);
+	//
+	//******************************************************************
+	int num = 0;
+	double sum = 0;
+
+	while(1)
+	{
+		static int i = 2;
+		sum += ((double)(i - 1) /(double) i);
+		printf(" %d/%d ", (i - 1), i);
+		if (sum >= 20)
+		{
+			break;
+		}
+		if (i != num)
+		{
+			printf("+");
+		}
+		i++;
+	}
+	printf("결과 : %.2f", sum);
+	
+	return 0;
+}
+*/
+
+/*
+#include <stdio.h>
+
+int main()
+{
+	double area = 100;
+	int i = 0;
+
+	while (1)
+	{
+		area = area / 2;
+		i++;
+		printf("%d번접었을 때 넓이는 %.2f cm\n", i,area);
+		if (area < 1)
+		{
+			break;
+		}
+	}
+	return 0;
+}
+*/
+
+
+/*
+
+//155 : 배열1 - 형성평가6
+//6개의 문자배열을 만들고 {'J' 'U' 'N' 'G' 'O' 'L'} 으로 초기화 한 후
+//문자 한 개를 입력받아 배열에서의 위치를 출력하는 프로그램을 작성하시오.
+//첫 번째 위치는 0번이며 배열에 없는 문자가 입력되면 "없는 문자입니다."
+//라는 메시지를 출력하고 끝내는 프로그램을 작성하시오.
+//
+#include <stdio.h>
+
+int main()
+{
+	char ch[6] = { 'J','U', 'N', 'G', 'O', 'L' };
+	char inputch;
+	bool check = false;
+	scanf("%c", &inputch);
+
+	for (int i = 0; i < 6; i++)
+	{
+		if (ch[i] == inputch)
+		{
+			printf("%c", ch[i]);
+			check = true;
+		}
+	}
+	if (check == false)
+	{
+		printf("없는 문자입니다.");
+	}
+
+	return 0;
+}
+*/
+/*
+#include <stdio.h>
+#include <conio.h>
+int main()
+{
+	char inputalphabet;
+	int i = 0;
+	char change = 'a';
+	while (1)
+	{
+		inputalphabet = _getch();
+
+			if (inputalphabet == change)
+			{
+				inputalphabet -= 32;				
+			}
+			printf("%c", inputalphabet);
+			i++;
+			if (inputalphabet == change-32)
+			{
+				printf(" - %d", i);
+				printf("\n");
+				change++;
+			}
+			if (i >= 15 || inputalphabet >= '0' && inputalphabet <= '9')
+			{
+				printf("%c", change -32);
+				printf(" - %d", i);
+				printf("\n");
+				break;
+			}
+	}
+	return 0;
+}
+*/
+/*
+#include <stdio.h>
+#include <conio.h>
+int main()
+{
+	int num = 0;
+	int num1 = 0;
+	int sum = 0;
+	char ch;
+	char cal;
+	while (1)
+	{
+		ch = _getch();
+		printf("%c", ch);
+
+		if (ch >= '0' && ch <= '9')
+		{
+			num = num * 10;
+			num = num + (ch - 48);
+		}
+		else if(ch == '+' ||ch =='-'|| ch == '*' || ch == '/')
+		{
+			break;
+		}
+	}
+	switch (ch)
+	{
+	case '+':
+		cal = '+';
+		break;
+	case '-':
+		cal = '-';
+		break;
+	case '*':
+		cal = '*';
+		break;
+	case '/':
+		cal = '/';
+		break;
+	default:
+		break;
+	}
+	while (1)
+	{
+		ch = _getch();
+		printf("%c", ch);
+
+		if (ch >= '0' && ch <= '9')
+		{
+			num1 = num1 * 10;
+			num1 = num1 + ch - 48;
+		}
+		else if (ch == '=')
+		{
+			switch (cal)
+			{
+				case '+':
+					sum = num + num1;
+					break;
+				case '-':
+					sum = num - num1;
+					break;
+				case '*':
+					sum = num * num1;
+					break;
+				case '/':
+					if (num1 == 0)
+					{
+						printf("분모가 0일 수 없다.error\n");
+						break;
+					}
+					sum = num / num1;
+					break;
+			default:
+				break;
+			}
+			break;
+		}
+	}
+	printf("\n%d %c %d = %d\n", num, cal,num1,sum);
+	return 0;
+}
+*/
+
+
+/*
+//152 : 배열1 - 형성평가3 
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int num[10];
+	int oddsum = 0; //홀수 합계
+	int evensum = 0; //짝수 합계
+	for (int i = 0; i < 10; i++)
+	{
+		cin >> num[i];
+	}//정수 10개 입력
+
+	for (int i = 0; i < 10; i++)
+	{
+		if (i % 2 == 0)
+		{
+			oddsum += num[i];	
+		}//홀수
+		else
+		{
+			evensum += num[i];
+		}//짝수
+	}
+	cout << "홀수 번째 합 : " << oddsum << endl << "짝수 번째 합 : " << evensum;
+	return 0;
+}
+*/
+
+/*
+//continue,break;
+#include <stdio.h>
+
+int main()
+{
+
+	for (int a = 1; a < 10; a++)
+	{
+		if (a % 2 == 0)
+			continue;
+		for (int b = 1; b < 10; b++)
+		{
+			if (a < b)
+			{
+				break;
+			}
+			printf("%d * %d = %d ", a, b, a*b);
+		}
+		printf("\n");
+	}
+	return 0;
+}
+*/
+
+/*
 //563 : 배열1 - 자가진단9 
 #include <iostream>
 using namespace std;
@@ -27,7 +412,7 @@ int main()
 		cout << num[i] << " ";
 	return 0;
 }
-
+*/
 /*
 //560 : 배열1 - 자가진단6 
 #include <iostream>
@@ -118,12 +503,14 @@ int main()
 /*
 //143 : 반복제어문3 - 형성평가4
 #include <iostream>
+#include <stdio.h>
 using namespace std;
 
 int main()
 {
 	int inputnum = 0;
-	cin >> inputnum;
+	//cin >> inputnum;
+	scanf("%d", &inputnum);
 
 	for (int i = 0; i < inputnum + inputnum - 1; i++)
 	{
@@ -131,25 +518,25 @@ int main()
 		{
 			for (int j = 0; j < i; j++)
 			{
-				cout << " ";
+				printf(" ");
 			}
 			for (int j = 0; j < (inputnum * 2 - 1) - (i * 2); j++)
 			{
-				cout << "*";
+				printf("*");
 			}
 		}
 		else
 		{
 			for (int j = inputnum + inputnum -2; j > i; j--)
 			{
-				cout << " ";
+				printf(" ");
 			}
 			for (int j = 0; j < (i * 2) - (inputnum * 2 - 3); j++)
 			{
-				cout << "*";
+				printf("*");
 			}
 		}
-		cout << endl;
+		printf("\n");
 	}
 	return 0;
 }
