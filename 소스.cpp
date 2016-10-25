@@ -1,4 +1,370 @@
 /*
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+	int n=100;
+	int n1 = n;
+	printf("%d", n1);
+	scanf("%d", &n);
+	int* ptr;     //포인터 변수 선언
+
+	ptr = (int*)malloc(sizeof(int)*n);  //int형으로 n만큼의 메모리를 할당
+
+	for (int i = 0; i < n; i++)
+	{
+		scanf("%d", &ptr[i]); //n개의 정수 입력
+	}
+
+	for (int i = 0; i < n; i++)
+	{
+		printf("%d", ptr[i]); //n개의 정수 출력
+	}
+
+	free(ptr); //메모리 해제
+	return 0;
+}
+*/
+/*
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int num[5][5] = { 0, };
+	int y;
+	int x;
+
+	num[0][0] = 1;
+	num[0][2] = 1;
+	num[0][4] = 1;
+
+	for (y = 1; y < 5; y++)
+	{
+		for (x = 0; x < 5; x++)
+		{
+			if (x - 1 != -1 && x + 1 != 5)
+			{
+				num[y][x] = num[y - 1][x - 1] + num[y - 1][x + 1];
+			}
+			else if (x - 1 == -1)
+				num[y][x] = num[y - 1][x + 1];
+			else if (x + 1 == 5)
+				num[y][x] = num[y - 1][x - 1];
+			else
+				num[y][x] = 0;
+		}
+	}
+	
+	for (y = 0; y < 5; y++)
+	{
+		for (x = 0; x < 5; x++)
+		{
+			cout << num[y][x]<<" ";
+		}
+		cout << endl;
+	}
+	return 0;
+}
+*/
+/*
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int scoreCnt[10] = { 0, };
+	int score;
+
+	while (true)
+	{
+		cin >> score;
+		if (score == 0)
+			break;
+		else if (score > 100)
+		{
+			cout << "100점 이상 입력 불가" << endl;
+			continue;
+		}
+
+		scoreCnt[score / 10]++;
+	}
+
+	for (int i = 0; i < 10; ++i)
+	{
+		if (scoreCnt[i] != 0)
+		{
+			cout << i * 10 << "점 이상 : " << scoreCnt[i] << "명" << endl;
+		}
+	}
+
+	return 0;
+}
+*/
+
+
+/*
+//랜덤 사이의 수들 구하기 및 평균
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main(void)
+{
+	int num0,num1;
+	int ramdomnum;
+	int mintemp=10000, maxtemp=-10000;
+
+	float sum = 0;
+	float avg = 0;
+
+	srand((unsigned)time(NULL));
+
+	printf("두자리 수 : ");
+	scanf("%d", &num0);
+	scanf("%d", &num1);
+
+	printf("랜덤 값들 :");
+	for (int i = 0; i < 10; i++)
+	{
+		if (num0 > num1)
+		{
+			ramdomnum = rand() % ((num0 - num1) + 1) + num1;
+		}
+		else
+		{
+			ramdomnum = rand() % ((num1 - num0) + 1) + num0;
+		}
+		printf("%d ", ramdomnum);
+		sum += ramdomnum;
+
+		if (mintemp > ramdomnum)
+		{
+			mintemp = ramdomnum;
+		}
+		else if (maxtemp < ramdomnum)
+		{
+			maxtemp = ramdomnum;
+		}
+	}
+
+	printf("\n최대값 : %d, 최소값 : %d\n", maxtemp, mintemp);
+	printf("평균 : %.3f", sum / (float)10);
+
+	return 0;
+}
+*/
+
+/*
+//161 : 배열2 - 형성평가2 
+
+#include <iostream>
+using namespace std;
+
+int main(void)
+{
+	int score[100] = {0,};
+	int count[11] = {0,};
+	int n = 0;
+
+	while (1)
+	{
+		cin >> score[n];
+		if (score[n] >= 100)
+		{
+			++count[0];
+		}
+		else if (score[n] >= 90)
+		{
+			++count[1];
+		}
+		else if (score[n] >= 80)
+		{
+			++count[2];
+		}
+		else if (score[n] >= 70)
+		{
+			++count[3];
+		}
+		else if (score[n] >= 60)
+		{
+			++count[4];
+		}
+		else if (score[n] >= 50)
+		{
+			++count[5];
+		}
+		else if (score[n] >= 40)
+		{
+			++count[6];
+		}
+		else if (score[n] >= 30)
+		{
+			++count[7];
+		}
+		else if (score[n] >= 20)
+		{
+			++count[8];
+		}
+		else if (score[n] >= 10)
+		{
+			++count[9];
+		}
+		else if (score[n] > 0)
+		{
+			++count[10];
+		}
+		else if (score[n] == 0)
+		{
+			break;
+		}
+		++n;
+	}
+
+	for (int i = 0; i <11; i++)
+	{
+		if (count[i] > 0)
+		{
+			switch (i)
+			{
+			case 0:
+				cout << "100";
+				break;
+			case 1:
+				cout << "90";
+				break;
+			case 2:
+				cout << "80";
+				break;
+			case 3:
+				cout << "70";
+				break;
+			case 4:
+				cout << "60";
+				break;
+			case 5:
+				cout << "50";
+				break;
+			case 6:
+				cout << "40";
+				break;
+			case 7:
+				cout << "30";
+				break;
+			case 8:
+				cout << "20";
+				break;
+			case 9:
+				cout << "10";
+				break;
+			case 10:
+				cout << "0";
+				break;
+			default:
+				break;
+			}
+			
+			cout <<"점 이상 : " << count[i] << "명" << endl;
+		}
+	}
+	return 0;
+}
+*/
+
+
+/*
+//160 : 배열2 - 형성평가1 
+
+#include <iostream>
+using namespace std;
+
+int main(void)
+{
+	int num[10];
+	int count[6] = {0,}; //0으로 초기화
+
+	for (int i = 0; i < sizeof(num) / sizeof(int); i++)
+	{
+		cin >> num[i];
+		switch (num[i])
+		{
+		case 1:
+			++count[0];
+			break;
+		case 2:
+			++count[1];
+			break;
+		case 3:
+			++count[2];
+			break;
+		case 4:
+			++count[3];
+			break;
+		case 5:
+			++count[4];
+			break;
+		case 6:
+			++count[5];
+			break;
+		default:
+			break;
+		}
+	} //주사위 던진때마다 입력
+
+	for (int i = 0; i < sizeof(count)/sizeof(int); i++)
+	{
+		cout << i+1 << " : " << count[i] << "번"<<endl;
+	}
+	//출력
+	return 0;
+}
+*/
+
+/*
+#include <stdio.h>
+
+//양의 정수 n에 대하여, 다음과 같은 계산 과정을 반복하기로 합니다.
+//
+//n → n / 2  (n이 짝수일 때)
+//n → 3 n + 1 (n이 홀수일 때)
+//
+//13에 대하여 위의 규칙을 적용해보면 아래처럼 10번의 과정을 통해 1이 됩니다.
+//
+//13 → 40 → 20 → 10 → 5 → 16 → 8 → 4 → 2 → 1
+int main(void)
+{
+	static int n=0;
+	scanf("%d",&n);
+	while (1)
+	{
+		printf("%d -> ", n);
+		if (n % 2 == 0)    //n이 짝수일때
+		{
+			n = n / 2; 
+			continue;
+		}
+		else if (n % 2 == 1 && n > 1)  //n이 홀수일때
+		{
+			n = 3 * n + 1;
+			continue;
+		}
+		else if (n == 1)
+		{
+			break;            //while문 종료
+		}
+		else                  //그밖일때
+		{
+			printf("예외경우");
+			break;
+		}	
+		
+	}
+	return 0;
+}
+*/
+
+/*
 //570 : 배열2 - 자가진단7 
 #include <iostream>
 using namespace std;
